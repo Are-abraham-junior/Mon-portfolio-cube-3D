@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Are Abraham Junior — Portfolio Développeur Full-Stack</title>
+  <meta name="description" content="Portfolio interactif 3D de Are Abraham Junior, Développeur WEB Full-Stack basé à Abidjan, Côte d'Ivoire. Découvrez mes projets, compétences et certifications." />
+  <meta name="author" content="Are Abraham Junior" />
+  <meta name="keywords" content="développeur, full-stack, web, portfolio, three.js, Abidjan, Côte d'Ivoire" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/styles/main.css" />
+</head>
+<body>
+  <!-- ========== SPLASH SCREEN ========== -->
+  <div id="splash-screen">
+    <div id="splash-flash-overlay"></div>
+    <div id="splash-content">
+      <h1 id="splash-title" class="hidden">ARE ABRAHAM JUNIOR</h1>
+      <p id="splash-subtitle" class="hidden">Développeur WEB Full-Stack</p>
+      <button id="splash-enter-btn" class="hidden" aria-label="Explorer le portfolio">
+        <span class="btn-icon">▶</span> Explorer
+      </button>
+    </div>
+  </div>
+
+  <!-- ========== MAIN APPLICATION ========== -->
+  <div id="app" class="hidden">
+    <!-- Three.js WebGL Canvas -->
+    <div id="webgl-container"></div>
+    <!-- CSS3D Renderer overlay -->
+    <div id="css3d-container"></div>
+
+    <!-- Screen flash overlay for lightning -->
+    <div id="flash-overlay"></div>
+
+    <!-- ===== NAVIGATION UI ===== -->
+    <!-- Arrow buttons -->
+    <button id="nav-up" class="nav-arrow nav-arrow--up" aria-label="Rotation vers le haut">
+      <svg viewBox="0 0 24 24" width="24" height="24"><path d="M12 4l-8 8h5v8h6v-8h5z" fill="currentColor"/></svg>
+    </button>
+    <button id="nav-down" class="nav-arrow nav-arrow--down" aria-label="Rotation vers le bas">
+      <svg viewBox="0 0 24 24" width="24" height="24"><path d="M12 20l8-8h-5V4H9v8H4z" fill="currentColor"/></svg>
+    </button>
+    <button id="nav-left" class="nav-arrow nav-arrow--left" aria-label="Rotation vers la gauche">
+      <svg viewBox="0 0 24 24" width="24" height="24"><path d="M4 12l8-8v5h8v6h-8v5z" fill="currentColor"/></svg>
+    </button>
+    <button id="nav-right" class="nav-arrow nav-arrow--right" aria-label="Rotation vers la droite">
+      <svg viewBox="0 0 24 24" width="24" height="24"><path d="M20 12l-8 8v-5H4v-6h8V4z" fill="currentColor"/></svg>
+    </button>
+    <button id="nav-reset" class="nav-reset-btn" aria-label="Réinitialiser la position du cube">
+      ↺ Reset
+    </button>
+
+    <!-- Side Menu -->
+    <button id="menu-toggle" class="menu-toggle-btn" aria-label="Ouvrir le menu">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+    <nav id="side-menu" class="side-menu" aria-label="Navigation principale">
+      <ul>
+        <li><button data-face="0" class="menu-item active">🙋 Présentation</button></li>
+        <li><button data-face="1" class="menu-item">💡 Compétences</button></li>
+        <li><button data-face="2" class="menu-item">🏅 Certificats & Diplômes</button></li>
+        <li><button data-face="3" class="menu-item">🚀 Projets</button></li>
+        <li><button data-face="4" class="menu-item">📬 Contact</button></li>
+        <li><button data-face="5" class="menu-item">💼 Expérience</button></li>
+      </ul>
+    </nav>
+
+    <!-- Audio Controls -->
+    <div id="audio-controls" class="audio-controls">
+      <button id="audio-toggle" class="audio-toggle-btn" aria-label="Activer/Désactiver le son">
+        🔊
+      </button>
+    </div>
+
+
+    <!-- Expanded Face Panel (full-screen) -->
+    <div id="expanded-panel" class="expanded-panel">
+      <button id="expanded-close" class="expanded-close-btn" aria-label="Retour au cube">
+        <svg viewBox="0 0 24 24" width="22" height="22"><path d="M19 11H7.83l4.88-4.88a1 1 0 0 0-1.42-1.42l-6.59 6.59a1 1 0 0 0 0 1.42l6.59 6.59a1 1 0 0 0 1.42-1.42L7.83 13H19a1 1 0 0 0 0-2z" fill="currentColor"/></svg>
+        <span>Retour</span>
+      </button>
+      <div id="expanded-content" class="expanded-content"></div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer" class="footer">
+      <span>Built with love by Are Abraham Junior</span>
+    </footer>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
